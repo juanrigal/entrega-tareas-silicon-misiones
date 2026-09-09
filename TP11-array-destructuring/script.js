@@ -1,0 +1,93 @@
+
+// ===== PARTE A: array de valores simples =====
+console.log("--- PARTE A ---");
+ 
+let categorias = ["acción", "comedia", "terror", "drama"];
+ 
+console.log(categorias);
+console.log(`Cantidad de categorías: ${categorias.length}`);
+ 
+let primeraCategoria = categorias[0];
+let ultimaCategoria = categorias[categorias.length - 1];
+console.log(`Primera categoría: ${primeraCategoria}`);
+console.log(`Última categoría: ${ultimaCategoria}`);
+ 
+categorias.push("aventura");
+console.log(`Cantidad de categorías: ${categorias.length}`);
+ 
+let categoriaEliminada = categorias.pop();
+console.log(`Categoría eliminada: ${categoriaEliminada}`);
+ 
+ 
+// ===== PARTE B: objeto =====
+console.log("--- PARTE B ---");
+ 
+let usuario = {
+  nombre: "Ana",
+  edad: 25,
+  ciudad: "Posadas",
+  temaFavorito: "películas"
+};
+ 
+console.log(`Nombre: ${usuario.nombre} — Edad: ${usuario.edad} — Ciudad: ${usuario.ciudad}`);
+console.log(`Tema favorito: ${usuario.temaFavorito}`);
+ 
+usuario.edad = 26;
+console.log(`Edad actualizada: ${usuario.edad}`);
+ 
+usuario.profesion = "estudiante";
+console.log(usuario);
+ 
+ 
+// ===== PARTE C: array de objetos =====
+console.log("--- PARTE C ---");
+ 
+let catalogo = [
+  { titulo: "Matrix", categoria: "acción", puntaje: 9, visto: true },
+  { titulo: "Superbad", categoria: "comedia", puntaje: 8, visto: true },
+  { titulo: "El Conjuro", categoria: "terror", puntaje: 7, visto: false },
+  { titulo: "Titanic", categoria: "drama", puntaje: 8, visto: true }
+];
+ 
+console.log(`Primer título: ${catalogo[0].titulo}`);
+console.log(`Puntaje del tercer elemento: ${catalogo[2].puntaje}`);
+ 
+let estadoSegundo = catalogo[1].visto ? "visto" : "pendiente";
+console.log(`${catalogo[1].titulo} — ${catalogo[1].categoria} — ${catalogo[1].puntaje}/10 — ${estadoSegundo}`);
+ 
+catalogo[2].puntaje = 9;
+console.log(`Puntaje actualizado: ${catalogo[2].puntaje}`);
+ 
+catalogo.push({ titulo: "Coco", categoria: "animación", puntaje: 10, visto: true });
+console.log(`Cantidad de elementos del catálogo: ${catalogo.length}`);
+ 
+ 
+// ===== PARTE D: destructuring =====
+console.log("--- PARTE D ---");
+ 
+let { titulo, categoria, puntaje, visto } = catalogo[0];
+let estadoPrimero = visto ? "visto" : "pendiente";
+console.log(`${titulo} — ${categoria} — ${puntaje}/10 — ${estadoPrimero}`);
+ 
+let { nombre, ciudad } = usuario;
+console.log(`Nombre: ${nombre} — Ciudad: ${ciudad}`);
+ 
+let [primero, segundo] = catalogo;
+console.log(`Primero: ${primero.titulo}`);
+console.log(`Segundo: ${segundo.titulo}`);
+ 
+ 
+// ===== PARTE E: complementaria =====
+console.log("--- PARTE E ---");
+ 
+let { titulo: tituloDestacado } = catalogo[2];
+console.log(`Título destacado: ${tituloDestacado}`);
+ 
+let { pasatiempo = "sin datos" } = usuario;
+console.log(`Pasatiempo: ${pasatiempo}`);
+ 
+let a = 20;
+let b = 10;
+[a, b] = [b, a];
+console.log(`Valores intercambiados: b = ${b}, a = ${a}`);
+ 
